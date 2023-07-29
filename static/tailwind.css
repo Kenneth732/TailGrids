@@ -424,3 +424,370 @@ Ensure the default browser behavior of the `hidden` attribute.
 [hidden] {
   display: none;
 }
+
+.snap{
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.snap::-webkit-scrollbar{
+  display: none;
+}
+
+.snap > img{
+  scroll-snap-align: center;
+}
+
+body{
+  font-family: "Inter", sans-serif;
+}
+
+.navbarTogglerActive > span:nth-child(1){
+  transform: rotate(45deg);
+  top: 7px;
+}
+
+.navbarTogglerActive > span:nth-child(2){
+  opacity: 0;
+}
+
+.navbarTogglerActive > span:nth-child(3){
+  top: -8px;
+  transform: rotate(135deg);
+}
+
+input:checked ~ .dot{
+  background: #3056D3;
+  transform: translateX(100%);
+}
+
+input:checked ~ .dot .active{
+  display: block;
+}
+
+input:checked ~ .dot .inactive{
+  display: none;
+}
+
+input#toggleFour:checked ~ .box{
+  background: #3056D3;
+}
+
+input#toggleFour:checked ~ .dot{
+  background: #fff;
+  transform: translateX(100%);
+}
+
+input#toggleFive:checked ~ .dot{
+  background: #fff;
+  transform: translateX(100%);
+}
+
+input#toggleFive:checked ~ .dot > span{
+  background: #3056D3;
+}
+
+input#toggleSix:checked ~ .dot{
+  background: #fff;
+  transform: translateX(100%);
+}
+
+input#toggleEight:checked ~ .box{
+  background: #EAEEFB;
+}
+
+input#toggleEight:checked ~ .dot{
+  background: #3056D3;
+}
+
+input#toggleEight:checked ~ .dot span{
+  background: #3056D3;
+  border-color: #fff;
+}
+
+input#toggleNine:checked ~ .dot span {
+  background: #fff;
+}
+
+input#toggleNine:checked ~ .dot{
+  background: #3056D3;
+}
+
+input:checked ~ .box{
+  border-color: #3056D3;
+}
+
+input#checkboxLabelOne:checked ~ .box{
+  border-color: #3056D3;
+}
+
+input#checkboxLabelOne:checked ~ .box .dot{
+  background: #3056D3;
+}
+
+input#checkboxLabelTwo:checked ~ .box span{
+  opacity: 100%;
+}
+
+input#checkboxLabelThree:checked ~ .box span{
+  opacity: 100%;
+}
+
+input#checkboxLabelFour:checked ~ .box{
+  border-color: #3056D3;
+}
+
+input#checkboxLabelFour:checked ~ .box span{
+  background: #3056D3;
+}
+
+input#checkboxLabelFive:checked ~ .box{
+  background: #3056D3;
+}
+
+.container{
+  margin-left: auto;
+  margin-r-ight: auto;
+  padding-left: 16px;
+  padding-r-ight: 16px;
+}
+
+input[type="checkbox"]:checked ~ .box span{
+  opacity: 1;
+}
+
+input[type="radio"]:checked ~ .box .circle{
+  background: #3056D3;
+}
+
+input[type="radio"]:checked ~ .box span{
+  opacity: 1;
+}
+
+.shipping:checked ~ label .title{
+  color: #3056D3;
+}
+
+.download-radio:checked ~ label .icon{
+  opacity: 1;
+}
+
+.autoSaverSwitch input:checked ~ .slider .dot{
+  transform: translateX(24px);
+}
+
+.autoSaverSwitch input:checked ~ .label .on{
+  display: block;
+}
+
+.autoSaverSwitch input:checked ~ .label .off{
+  display: none;
+}
+
+.themeSwitcherTwo input:checked ~ .slider .dot{
+  transform: translateX(28px);
+}
+
+.checkbox-list:checked ~ label .icon{
+  opacity: 1;
+}
+
+.box-select-1:checked ~ label .box{
+  border-color: #3056D3;
+  background: #3056D3;
+}
+
+.box-select-1:checked ~ label .box .icon{
+  opacity: 1;
+}
+
+.select-list:checked ~ label .icon{
+  background: #3056D3;
+}
+
+.tableCheckbox:checked ~ label .icon{
+  opacity: 1;
+}
+
+.tableCheckbox-2:checked ~ label .icon{
+  color: #fff;
+  opacity: 1;
+}
+
+*, ::before, ::after{
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+
+.container{
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+@media (min-width: 400px){
+  .container{
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 540px){
+  .container{
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 720px){
+  .container{
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 960px){
+  .container{
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1140px){
+  .container{
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1320px){
+  .container{
+    max-width: 1320px;
+  }
+}
+
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.visible{
+  visibility: visible;
+}
+
+.invisible{
+  visibility: hidden;
+}
+
+.fixed{
+  position: fixed;
+}
+
+.absolute{
+  position: absolute;
+}
+
+.relative{
+  position: relative;
+}
+
+.top-0{
+  top: 0px;
+}
+
+.left-0{
+  left: 0px;
+}
+
+.-right-7{
+  right: -1.75rem;
+}
+
+.-bottom-7{
+  bottom: -1.75rem;
+}
+
+.-top-10{
+  top: -2.5rem;
+}
+
+.-right-9{
+  right: -2.25rem;
+}
+
+.-right-10{
+  right: -2.5rem;
+}
+
+.top-\[90px\]{
+  top: 90px;
+}
+
+.-left-7{
+  left: -1.75rem;
+}
+
+.top-6{
+  top: 1.5rem;
+}
+
+.right-6{
+  right: 1.5rem;
+}
+
+.bottom-0{
+  bottom: 0px;
+}
+
+.right-0{
+  right: 0px;
+}
+
+.top-full{
+  top: 100%;
+}
