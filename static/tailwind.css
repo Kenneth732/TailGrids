@@ -1095,3 +1095,43 @@ input[type="radio"]:checked ~ .box span{
 .mt-2{
   margin-top: 0.5rem;
 }
+
+.mr-3{
+  margin-right: 0.75rem;
+}
+
+.mt-\[-2px\]{
+  margin-top: -2px;
+}
+
+.mr-2{
+  margin-right: 0.5rem;
+}
+
+.ml-2{
+  margin-left: 0.5rem;
+}
+
+.-mt-20{
+  margin-top: -5rem;
+}
+
+.mb-14{
+  margin-bottom: 3.5rem;
+}
+
+.ml-3{
+  margin-left: 0.75rem;
+}
+
+.mt-3{
+  margin-top: 0.75rem;
+}
+
+.block{
+  display: block;
+}
+
+.inline-block{
+  display: inline-block;
+}
