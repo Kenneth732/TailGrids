@@ -1,5 +1,4 @@
 
-
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -18,4 +17,6 @@ def index():
 def about():
     return render_template('about.html')
 
-
+@app.route('/create/', methods=('GET', 'POST'))
+def create():
+    return render_template('create.html')
