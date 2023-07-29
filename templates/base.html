@@ -77,6 +77,11 @@
             <!-- ====== Navbar Section End -->
         </header>
         <div class="content">
+            {% for message in get_flashed_messages() %}
+               <div class="alert">
+                {{ message }}
+               </div>
+            {% endfor %}
             {% block content %}
             {% endblock %}
         </div>
