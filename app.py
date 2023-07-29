@@ -11,3 +11,6 @@ messages = [
 def index():
     return render_template('index.html', messages=messages)
 
+@app.route('/about/')
+def about():
+    return render_template('about.html')
