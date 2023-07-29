@@ -1,13 +1,1121 @@
 {% extends 'base.html' %}
 
-{% block content %}
-  <h1>{% block title %} {% endblock %}</h1>
-  <div class='messages'>
-    {% for message in messages %}
-       <div class="message">
-        <h3>{{ message['title'] }}</h3>
-        <p>{{ message['content'] }}</p>
-       </div>
-    {% endfor %}
-  </div>
+{% block content %}  
+     <!-- ====== Team Section Start -->
+     <section class="pt-20 pb-10 lg:pt-[120px] lg:pb-20">
+        <div class="container mx-auto">
+          <div class="-mx-4 flex flex-wrap justify-center">
+            <div class="w-full px-4 md:w-1/2 xl:w-1/4">
+              <div class="mx-auto mb-10 w-full max-w-[370px]">
+                <div class="relative overflow-hidden rounded-lg">
+                  <img
+                    src="data:image/jpeg;base64,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"
+                    alt="image"
+                    class="w-full"
+                  />
+                  <div class="absolute bottom-5 left-0 w-full text-center">
+                    <div
+                      class="relative mx-5 overflow-hidden rounded-lg bg-white py-5 px-3"
+                    >
+                      <h3 class="text-base font-semibold text-dark">
+                        Coriss Ambady
+                      </h3>
+                      <p class="text-sm text-body-color">Web Developer</p>
+                      <div>
+                        <span class="absolute left-0 bottom-0">
+                          <svg
+                            width="61"
+                            height="30"
+                            viewBox="0 0 61 30"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle
+                              cx="16"
+                              cy="45"
+                              r="45"
+                              fill="#13C296"
+                              fill-opacity="0.11"
+                            />
+                          </svg>
+                        </span>
+                        <span class="absolute top-0 right-0">
+                          <svg
+                            width="20"
+                            height="25"
+                            viewBox="0 0 20 25"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle
+                              cx="0.706257"
+                              cy="24.3533"
+                              r="0.646687"
+                              transform="rotate(-90 0.706257 24.3533)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="6.39669"
+                              cy="24.3533"
+                              r="0.646687"
+                              transform="rotate(-90 6.39669 24.3533)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="12.0881"
+                              cy="24.3533"
+                              r="0.646687"
+                              transform="rotate(-90 12.0881 24.3533)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="17.7785"
+                              cy="24.3533"
+                              r="0.646687"
+                              transform="rotate(-90 17.7785 24.3533)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="0.706257"
+                              cy="18.6624"
+                              r="0.646687"
+                              transform="rotate(-90 0.706257 18.6624)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="6.39669"
+                              cy="18.6624"
+                              r="0.646687"
+                              transform="rotate(-90 6.39669 18.6624)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="12.0881"
+                              cy="18.6624"
+                              r="0.646687"
+                              transform="rotate(-90 12.0881 18.6624)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="17.7785"
+                              cy="18.6624"
+                              r="0.646687"
+                              transform="rotate(-90 17.7785 18.6624)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="0.706257"
+                              cy="12.9717"
+                              r="0.646687"
+                              transform="rotate(-90 0.706257 12.9717)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="6.39669"
+                              cy="12.9717"
+                              r="0.646687"
+                              transform="rotate(-90 6.39669 12.9717)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="12.0881"
+                              cy="12.9717"
+                              r="0.646687"
+                              transform="rotate(-90 12.0881 12.9717)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="17.7785"
+                              cy="12.9717"
+                              r="0.646687"
+                              transform="rotate(-90 17.7785 12.9717)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="0.706257"
+                              cy="7.28077"
+                              r="0.646687"
+                              transform="rotate(-90 0.706257 7.28077)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="6.39669"
+                              cy="7.28077"
+                              r="0.646687"
+                              transform="rotate(-90 6.39669 7.28077)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="12.0881"
+                              cy="7.28077"
+                              r="0.646687"
+                              transform="rotate(-90 12.0881 7.28077)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="17.7785"
+                              cy="7.28077"
+                              r="0.646687"
+                              transform="rotate(-90 17.7785 7.28077)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="0.706257"
+                              cy="1.58989"
+                              r="0.646687"
+                              transform="rotate(-90 0.706257 1.58989)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="6.39669"
+                              cy="1.58989"
+                              r="0.646687"
+                              transform="rotate(-90 6.39669 1.58989)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="12.0881"
+                              cy="1.58989"
+                              r="0.646687"
+                              transform="rotate(-90 12.0881 1.58989)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="17.7785"
+                              cy="1.58989"
+                              r="0.646687"
+                              transform="rotate(-90 17.7785 1.58989)"
+                              fill="#3056D3"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full px-4 md:w-1/2 xl:w-1/4">
+              <div class="mx-auto mb-10 w-full max-w-[370px]">
+                <div class="relative overflow-hidden rounded-lg">
+                  <img
+                    src="https://images.ctfassets.net/wp1lcwdav1p1/1nNRSeqkpDoWxTIw6dizv0/63ec7bb6ab6f65be435abece506dd18c/UX_design_skills.png?w=1500&h=680&q=60&fit=fill&f=faces&fm=jpg&fl=progressive"
+                    alt="image"
+                    class="w-full"
+                  />
+                  <div class="absolute bottom-5 left-0 w-full text-center">
+                    <div
+                      class="relative mx-5 overflow-hidden rounded-lg bg-white py-5 px-3"
+                    >
+                      <h3 class="text-base font-semibold text-dark">
+                        Glorius Cristian
+                      </h3>
+                      <p class="text-sm text-body-color">App Developer</p>
+                      <div>
+                        <span class="absolute left-0 bottom-0">
+                          <svg
+                            width="61"
+                            height="30"
+                            viewBox="0 0 61 30"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle
+                              cx="16"
+                              cy="45"
+                              r="45"
+                              fill="#13C296"
+                              fill-opacity="0.11"
+                            />
+                          </svg>
+                        </span>
+                        <span class="absolute top-0 right-0">
+                          <svg
+                            width="20"
+                            height="25"
+                            viewBox="0 0 20 25"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle
+                              cx="0.706257"
+                              cy="24.3533"
+                              r="0.646687"
+                              transform="rotate(-90 0.706257 24.3533)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="6.39669"
+                              cy="24.3533"
+                              r="0.646687"
+                              transform="rotate(-90 6.39669 24.3533)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="12.0881"
+                              cy="24.3533"
+                              r="0.646687"
+                              transform="rotate(-90 12.0881 24.3533)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="17.7785"
+                              cy="24.3533"
+                              r="0.646687"
+                              transform="rotate(-90 17.7785 24.3533)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="0.706257"
+                              cy="18.6624"
+                              r="0.646687"
+                              transform="rotate(-90 0.706257 18.6624)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="6.39669"
+                              cy="18.6624"
+                              r="0.646687"
+                              transform="rotate(-90 6.39669 18.6624)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="12.0881"
+                              cy="18.6624"
+                              r="0.646687"
+                              transform="rotate(-90 12.0881 18.6624)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="17.7785"
+                              cy="18.6624"
+                              r="0.646687"
+                              transform="rotate(-90 17.7785 18.6624)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="0.706257"
+                              cy="12.9717"
+                              r="0.646687"
+                              transform="rotate(-90 0.706257 12.9717)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="6.39669"
+                              cy="12.9717"
+                              r="0.646687"
+                              transform="rotate(-90 6.39669 12.9717)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="12.0881"
+                              cy="12.9717"
+                              r="0.646687"
+                              transform="rotate(-90 12.0881 12.9717)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="17.7785"
+                              cy="12.9717"
+                              r="0.646687"
+                              transform="rotate(-90 17.7785 12.9717)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="0.706257"
+                              cy="7.28077"
+                              r="0.646687"
+                              transform="rotate(-90 0.706257 7.28077)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="6.39669"
+                              cy="7.28077"
+                              r="0.646687"
+                              transform="rotate(-90 6.39669 7.28077)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="12.0881"
+                              cy="7.28077"
+                              r="0.646687"
+                              transform="rotate(-90 12.0881 7.28077)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="17.7785"
+                              cy="7.28077"
+                              r="0.646687"
+                              transform="rotate(-90 17.7785 7.28077)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="0.706257"
+                              cy="1.58989"
+                              r="0.646687"
+                              transform="rotate(-90 0.706257 1.58989)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="6.39669"
+                              cy="1.58989"
+                              r="0.646687"
+                              transform="rotate(-90 6.39669 1.58989)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="12.0881"
+                              cy="1.58989"
+                              r="0.646687"
+                              transform="rotate(-90 12.0881 1.58989)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="17.7785"
+                              cy="1.58989"
+                              r="0.646687"
+                              transform="rotate(-90 17.7785 1.58989)"
+                              fill="#3056D3"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full px-4 md:w-1/2 xl:w-1/4">
+              <div class="mx-auto mb-10 w-full max-w-[370px]">
+                <div class="relative overflow-hidden rounded-lg">
+                  <img
+                    src="https://www.simplilearn.com/ice9/free_resources_article_thumb/UI_UX_Designer_Salary_in_India.jpg"
+                    alt="image"
+                    class="w-full"
+                  />
+                  <div class="absolute bottom-5 left-0 w-full text-center">
+                    <div
+                      class="relative mx-5 overflow-hidden rounded-lg bg-white py-5 px-3"
+                    >
+                      <h3 class="text-base font-semibold text-dark">
+                        Jackie Sanders
+                      </h3>
+                      <p class="text-sm text-body-color">UI/UX Designer</p>
+                      <div>
+                        <span class="absolute left-0 bottom-0">
+                          <svg
+                            width="61"
+                            height="30"
+                            viewBox="0 0 61 30"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle
+                              cx="16"
+                              cy="45"
+                              r="45"
+                              fill="#13C296"
+                              fill-opacity="0.11"
+                            />
+                          </svg>
+                        </span>
+                        <span class="absolute top-0 right-0">
+                          <svg
+                            width="20"
+                            height="25"
+                            viewBox="0 0 20 25"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle
+                              cx="0.706257"
+                              cy="24.3533"
+                              r="0.646687"
+                              transform="rotate(-90 0.706257 24.3533)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="6.39669"
+                              cy="24.3533"
+                              r="0.646687"
+                              transform="rotate(-90 6.39669 24.3533)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="12.0881"
+                              cy="24.3533"
+                              r="0.646687"
+                              transform="rotate(-90 12.0881 24.3533)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="17.7785"
+                              cy="24.3533"
+                              r="0.646687"
+                              transform="rotate(-90 17.7785 24.3533)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="0.706257"
+                              cy="18.6624"
+                              r="0.646687"
+                              transform="rotate(-90 0.706257 18.6624)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="6.39669"
+                              cy="18.6624"
+                              r="0.646687"
+                              transform="rotate(-90 6.39669 18.6624)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="12.0881"
+                              cy="18.6624"
+                              r="0.646687"
+                              transform="rotate(-90 12.0881 18.6624)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="17.7785"
+                              cy="18.6624"
+                              r="0.646687"
+                              transform="rotate(-90 17.7785 18.6624)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="0.706257"
+                              cy="12.9717"
+                              r="0.646687"
+                              transform="rotate(-90 0.706257 12.9717)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="6.39669"
+                              cy="12.9717"
+                              r="0.646687"
+                              transform="rotate(-90 6.39669 12.9717)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="12.0881"
+                              cy="12.9717"
+                              r="0.646687"
+                              transform="rotate(-90 12.0881 12.9717)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="17.7785"
+                              cy="12.9717"
+                              r="0.646687"
+                              transform="rotate(-90 17.7785 12.9717)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="0.706257"
+                              cy="7.28077"
+                              r="0.646687"
+                              transform="rotate(-90 0.706257 7.28077)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="6.39669"
+                              cy="7.28077"
+                              r="0.646687"
+                              transform="rotate(-90 6.39669 7.28077)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="12.0881"
+                              cy="7.28077"
+                              r="0.646687"
+                              transform="rotate(-90 12.0881 7.28077)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="17.7785"
+                              cy="7.28077"
+                              r="0.646687"
+                              transform="rotate(-90 17.7785 7.28077)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="0.706257"
+                              cy="1.58989"
+                              r="0.646687"
+                              transform="rotate(-90 0.706257 1.58989)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="6.39669"
+                              cy="1.58989"
+                              r="0.646687"
+                              transform="rotate(-90 6.39669 1.58989)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="12.0881"
+                              cy="1.58989"
+                              r="0.646687"
+                              transform="rotate(-90 12.0881 1.58989)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="17.7785"
+                              cy="1.58989"
+                              r="0.646687"
+                              transform="rotate(-90 17.7785 1.58989)"
+                              fill="#3056D3"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full px-4 md:w-1/2 xl:w-1/4">
+              <div class="mx-auto mb-10 w-full max-w-[370px]">
+                <div class="relative overflow-hidden rounded-lg">
+                  <img
+                    src="https://imageio.forbes.com/specials-images/imageserve/61273814d1621a158c2f616b/Creating-new-content-for-her-business-website/0x0.jpg?crop=1981,1115,x77,y0,safe&height=400&width=711&fit=bounds"
+                    alt="image"
+                    class="w-full"
+                  />
+                  <div class="absolute bottom-5 left-0 w-full text-center">
+                    <div
+                      class="relative mx-5 overflow-hidden rounded-lg bg-white py-5 px-3"
+                    >
+                      <h3 class="text-base font-semibold text-dark">
+                        Nikolas Brooten
+                      </h3>
+                      <p class="text-sm text-body-color">Sales Manager</p>
+                      <div>
+                        <span class="absolute left-0 bottom-0">
+                          <svg
+                            width="61"
+                            height="30"
+                            viewBox="0 0 61 30"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle
+                              cx="16"
+                              cy="45"
+                              r="45"
+                              fill="#13C296"
+                              fill-opacity="0.11"
+                            />
+                          </svg>
+                        </span>
+                        <span class="absolute top-0 right-0">
+                          <svg
+                            width="20"
+                            height="25"
+                            viewBox="0 0 20 25"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle
+                              cx="0.706257"
+                              cy="24.3533"
+                              r="0.646687"
+                              transform="rotate(-90 0.706257 24.3533)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="6.39669"
+                              cy="24.3533"
+                              r="0.646687"
+                              transform="rotate(-90 6.39669 24.3533)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="12.0881"
+                              cy="24.3533"
+                              r="0.646687"
+                              transform="rotate(-90 12.0881 24.3533)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="17.7785"
+                              cy="24.3533"
+                              r="0.646687"
+                              transform="rotate(-90 17.7785 24.3533)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="0.706257"
+                              cy="18.6624"
+                              r="0.646687"
+                              transform="rotate(-90 0.706257 18.6624)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="6.39669"
+                              cy="18.6624"
+                              r="0.646687"
+                              transform="rotate(-90 6.39669 18.6624)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="12.0881"
+                              cy="18.6624"
+                              r="0.646687"
+                              transform="rotate(-90 12.0881 18.6624)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="17.7785"
+                              cy="18.6624"
+                              r="0.646687"
+                              transform="rotate(-90 17.7785 18.6624)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="0.706257"
+                              cy="12.9717"
+                              r="0.646687"
+                              transform="rotate(-90 0.706257 12.9717)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="6.39669"
+                              cy="12.9717"
+                              r="0.646687"
+                              transform="rotate(-90 6.39669 12.9717)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="12.0881"
+                              cy="12.9717"
+                              r="0.646687"
+                              transform="rotate(-90 12.0881 12.9717)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="17.7785"
+                              cy="12.9717"
+                              r="0.646687"
+                              transform="rotate(-90 17.7785 12.9717)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="0.706257"
+                              cy="7.28077"
+                              r="0.646687"
+                              transform="rotate(-90 0.706257 7.28077)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="6.39669"
+                              cy="7.28077"
+                              r="0.646687"
+                              transform="rotate(-90 6.39669 7.28077)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="12.0881"
+                              cy="7.28077"
+                              r="0.646687"
+                              transform="rotate(-90 12.0881 7.28077)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="17.7785"
+                              cy="7.28077"
+                              r="0.646687"
+                              transform="rotate(-90 17.7785 7.28077)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="0.706257"
+                              cy="1.58989"
+                              r="0.646687"
+                              transform="rotate(-90 0.706257 1.58989)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="6.39669"
+                              cy="1.58989"
+                              r="0.646687"
+                              transform="rotate(-90 6.39669 1.58989)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="12.0881"
+                              cy="1.58989"
+                              r="0.646687"
+                              transform="rotate(-90 12.0881 1.58989)"
+                              fill="#3056D3"
+                            />
+                            <circle
+                              cx="17.7785"
+                              cy="1.58989"
+                              r="0.646687"
+                              transform="rotate(-90 17.7785 1.58989)"
+                              fill="#3056D3"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ====== Team Section End -->
+      <section class="bg-white dark:bg-gray-900 py-8 lg:py-16">
+        {% for message in messages %}
+        <div class="max-w-2xl mx-auto px-4">
+            <div class="flex justify-between items-center mb-6">
+              <!-- <h2 class="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">Discussion (20)</h2> -->
+          </div>
+          <article class="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">
+              <footer class="flex justify-between items-center mb-2">
+                  <div class="flex items-center">
+                      <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white"><img
+                              class="mr-2 w-6 h-6 rounded-full"
+                              src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
+                              alt="Michael Gough">Michael Gough</p>
+                      <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08"
+                              title="February 8th, 2022">Feb. 8, 2022</time></p>
+                  </div>
+                  <button id="dropdownComment1Button" data-dropdown-toggle="dropdownComment1"
+                      class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                      type="button">
+                      <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path
+                              d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z">
+                          </path>
+                      </svg>
+                      <span class="sr-only">Comment settings</span>
+                  </button>
+                  <!-- Dropdown menu -->
+                  <div id="dropdownComment1"
+                      class="hidden z-10 w-36 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+                      <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
+                          aria-labelledby="dropdownMenuIconHorizontalButton">
+                          <li>
+                              <a href="#"
+                                  class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
+                          </li>
+                          <li>
+                              <a href="#"
+                                  class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</a>
+                          </li>
+                          <li>
+                              <a href="#"
+                                  class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</a>
+                          </li>
+                      </ul>
+                  </div>
+              </footer>
+              <h3 class="text-gray-500 dark:text-gray-400">{{message['title']}}.</h3>
+              <p class="text-gray-500 dark:text-gray-400">{{ message['content'] }}</p>
+              <div class="flex items-center mt-4 space-x-4">
+                  <button type="button"
+                      class="flex items-center text-sm text-gray-500 hover:underline dark:text-gray-400">
+                      <svg aria-hidden="true" class="mr-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                      Reply
+                  </button>
+              </div>
+          </article>
+        </div>
+        {% endfor %}
+      </section>
+    <!-- ====== Footer Section Start -->
+    <footer class="relative z-10 bg-white pt-20 pb-10 lg:pt-[120px] lg:pb-20">
+        <div class="container mx-auto">
+          <div class="-mx-4 flex flex-wrap">
+            <div class="w-full px-4 sm:w-2/3 lg:w-3/12">
+              <div class="mb-10 w-full">
+                <a
+                  href="javascript:void(0)"
+                  class="mb-6 inline-block max-w-[160px]"
+                >
+                  <img
+                    src="assets/images/logo/logo.svg"
+                    alt="logo"
+                    class="max-w-full"
+                  />
+                </a>
+                <p class="mb-7 text-base text-body-color">
+                  Sed ut perspiciatis undmnis is iste natus error sit amet
+                  voluptatem totam rem aperiam.
+                </p>
+                <p class="flex items-center text-sm font-medium text-dark">
+                  <span class="mr-3 text-primary">
+                    <svg
+                      width="19"
+                      height="21"
+                      viewBox="0 0 19 21"
+                      class="fill-current"
+                    >
+                      <path
+                        d="M17.8076 11.8129C17.741 11.0475 17.1088 10.5151 16.3434 10.5151H2.16795C1.40261 10.5151 0.803643 11.0808 0.703816 11.8129L0.00502514 18.8008C-0.0282506 19.2001 0.104853 19.6327 0.371059 19.9322C0.637265 20.2317 1.03657 20.398 1.46916 20.398H17.0755C17.4748 20.398 17.8741 20.2317 18.1736 19.9322C18.4398 19.6327 18.5729 19.2334 18.5396 18.8008L17.8076 11.8129ZM17.2751 19.1668C17.2419 19.2001 17.1753 19.2667 17.0422 19.2667H1.46916C1.36933 19.2667 1.2695 19.2001 1.23623 19.1668C1.20295 19.1336 1.1364 19.067 1.16968 18.9339L1.86847 11.9127C1.86847 11.7463 2.00157 11.6465 2.16795 11.6465H16.3767C16.5431 11.6465 16.6429 11.7463 16.6762 11.9127L17.375 18.9339C17.3417 19.0337 17.3084 19.1336 17.2751 19.1668Z"
+                      />
+                      <path
+                        d="M9.25704 13.1106C7.95928 13.1106 6.92773 14.1422 6.92773 15.4399C6.92773 16.7377 7.95928 17.7693 9.25704 17.7693C10.5548 17.7693 11.5863 16.7377 11.5863 15.4399C11.5863 14.1422 10.5548 13.1106 9.25704 13.1106ZM9.25704 16.6046C8.6248 16.6046 8.09239 16.0722 8.09239 15.4399C8.09239 14.8077 8.6248 14.2753 9.25704 14.2753C9.88928 14.2753 10.4217 14.8077 10.4217 15.4399C10.4217 16.0722 9.88928 16.6046 9.25704 16.6046Z"
+                      />
+                      <path
+                        d="M0.802807 6.05619C0.869358 7.52032 2.16711 8.11928 2.83263 8.11928H5.16193C5.19521 8.11928 5.19521 8.11928 5.19521 8.11928C6.19348 8.05273 7.19175 7.38722 7.19175 6.05619V5.25757C8.28985 5.25757 10.8188 5.25757 11.9169 5.25757V6.05619C11.9169 7.38722 12.9152 8.05273 13.9135 8.11928H13.9467H16.2428C16.9083 8.11928 18.206 7.52032 18.2726 6.05619C18.2726 5.95636 18.2726 5.59033 18.2726 5.25757C18.2726 4.99136 18.2726 4.75843 18.2726 4.72516C18.2726 4.69188 18.2726 4.6586 18.2726 4.6586C18.1727 3.72688 17.84 2.96154 17.2743 2.36258L17.241 2.3293C16.4091 1.56396 15.4109 1.13138 14.6455 0.865169C12.416 0 9.62088 0 9.48778 0C7.52451 0.0332757 6.26003 0.199654 4.36331 0.865169C3.63125 1.0981 2.63297 1.53068 1.80108 2.29603L1.7678 2.3293C1.20212 2.92827 0.869359 3.69361 0.769531 4.62533C0.769531 4.6586 0.769531 4.69188 0.769531 4.69188C0.769531 4.75843 0.769531 4.95809 0.769531 5.22429C0.802807 5.52377 0.802807 5.92308 0.802807 6.05619ZM2.5997 3.12792C3.26521 2.52896 4.09711 2.16292 4.7959 1.89672C6.52624 1.26448 7.65761 1.13138 9.55433 1.0981C9.68743 1.0981 12.2829 1.13138 14.2795 1.89672C14.9783 2.16292 15.8102 2.49568 16.4757 3.12792C16.8417 3.52723 17.0746 4.05964 17.1412 4.69188C17.1412 4.79171 17.1412 4.95809 17.1412 5.22429C17.1412 5.55705 17.1412 5.92308 17.1412 6.02291C17.1079 6.78825 16.3759 6.95463 16.276 6.95463H13.98C13.6472 6.92135 13.1148 6.78825 13.1148 6.05619V4.69188C13.1148 4.42567 12.9485 4.22602 12.7155 4.12619C12.5159 4.05964 6.69262 4.05964 6.49296 4.12619C6.26003 4.19274 6.09365 4.42567 6.09365 4.69188V6.05619C6.09365 6.78825 5.56124 6.92135 5.22848 6.95463H2.93246C2.83263 6.95463 2.10056 6.78825 2.06729 6.02291C2.06729 5.92308 2.06729 5.55705 2.06729 5.22429C2.06729 4.95809 2.06729 4.82498 2.06729 4.72516C2.00073 4.05964 2.23366 3.52723 2.5997 3.12792Z"
+                      />
+                    </svg>
+                  </span>
+                  <span>+012 (345) 678 99</span>
+                </p>
+              </div>
+            </div>
+            <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
+              <div class="mb-10 w-full">
+                <h4 class="mb-9 text-lg font-semibold text-dark">Resources</h4>
+                <ul>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="mb-2 inline-block text-base leading-loose text-body-color hover:text-primary"
+                    >
+                      SaaS Development
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="mb-2 inline-block text-base leading-loose text-body-color hover:text-primary"
+                    >
+                      Our Products
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="mb-2 inline-block text-base leading-loose text-body-color hover:text-primary"
+                    >
+                      User Flow
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="mb-2 inline-block text-base leading-loose text-body-color hover:text-primary"
+                    >
+                      User Strategy
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
+              <div class="mb-10 w-full">
+                <h4 class="mb-9 text-lg font-semibold text-dark">Company</h4>
+                <ul>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="mb-2 inline-block text-base leading-loose text-body-color hover:text-primary"
+                    >
+                      About TailGrids
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="mb-2 inline-block text-base leading-loose text-body-color hover:text-primary"
+                    >
+                      Contact & Support
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="mb-2 inline-block text-base leading-loose text-body-color hover:text-primary"
+                    >
+                      Success History
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="mb-2 inline-block text-base leading-loose text-body-color hover:text-primary"
+                    >
+                      Setting & Privacy
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
+              <div class="mb-10 w-full">
+                <h4 class="mb-9 text-lg font-semibold text-dark">Quick Links</h4>
+                <ul>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="mb-2 inline-block text-base leading-loose text-body-color hover:text-primary"
+                    >
+                      Premium Support
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="mb-2 inline-block text-base leading-loose text-body-color hover:text-primary"
+                    >
+                      Our Services
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="mb-2 inline-block text-base leading-loose text-body-color hover:text-primary"
+                    >
+                      Know Our Team
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="mb-2 inline-block text-base leading-loose text-body-color hover:text-primary"
+                    >
+                      Download App
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="w-full px-4 sm:w-1/2 lg:w-3/12">
+              <div class="mb-10 w-full">
+                <h4 class="mb-9 text-lg font-semibold text-dark">Follow Us On</h4>
+                <div class="mb-6 flex items-center">
+                  <a
+                    href="javascript:void(0)"
+                    class="mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:border-primary hover:bg-primary hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                  >
+                    <svg
+                      width="8"
+                      height="16"
+                      viewBox="0 0 8 16"
+                      class="fill-current"
+                    >
+                      <path
+                        d="M7.43902 6.4H6.19918H5.75639V5.88387V4.28387V3.76774H6.19918H7.12906C7.3726 3.76774 7.57186 3.56129 7.57186 3.25161V0.516129C7.57186 0.232258 7.39474 0 7.12906 0H5.51285C3.76379 0 2.54609 1.44516 2.54609 3.5871V5.83226V6.34839H2.10329H0.597778C0.287819 6.34839 0 6.63226 0 7.04516V8.90323C0 9.26452 0.243539 9.6 0.597778 9.6H2.05902H2.50181V10.1161V15.3032C2.50181 15.6645 2.74535 16 3.09959 16H5.18075C5.31359 16 5.42429 15.9226 5.51285 15.8194C5.60141 15.7161 5.66783 15.5355 5.66783 15.3806V10.1419V9.62581H6.13276H7.12906C7.41688 9.62581 7.63828 9.41935 7.68256 9.10968V9.08387V9.05806L7.99252 7.27742C8.01466 7.09677 7.99252 6.89032 7.85968 6.68387C7.8154 6.55484 7.61614 6.42581 7.43902 6.4Z"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    href="javascript:void(0)"
+                    class="mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:border-primary hover:bg-primary hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                  >
+                    <svg
+                      width="16"
+                      height="12"
+                      viewBox="0 0 16 12"
+                      class="fill-current"
+                    >
+                      <path
+                        d="M14.2194 2.06654L15.2 0.939335C15.4839 0.634051 15.5613 0.399217 15.5871 0.2818C14.8129 0.704501 14.0903 0.845401 13.6258 0.845401H13.4452L13.3419 0.751468C12.7226 0.258317 11.9484 0 11.1226 0C9.31613 0 7.89677 1.36204 7.89677 2.93542C7.89677 3.02935 7.89677 3.17025 7.92258 3.26419L8 3.73386L7.45806 3.71037C4.15484 3.61644 1.44516 1.03327 1.00645 0.587084C0.283871 1.76125 0.696774 2.88845 1.13548 3.59296L2.0129 4.90802L0.619355 4.20352C0.645161 5.18982 1.05806 5.96477 1.85806 6.52838L2.55484 6.99804L1.85806 7.25636C2.29677 8.45401 3.27742 8.94716 4 9.13503L4.95484 9.36986L4.05161 9.93346C2.60645 10.8728 0.8 10.8024 0 10.7319C1.62581 11.7652 3.56129 12 4.90323 12C5.90968 12 6.65806 11.9061 6.83871 11.8356C14.0645 10.2857 14.4 4.41487 14.4 3.2407V3.07632L14.5548 2.98239C15.4323 2.23092 15.7935 1.8317 16 1.59687C15.9226 1.62035 15.8194 1.66732 15.7161 1.6908L14.2194 2.06654Z"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    href="javascript:void(0)"
+                    class="mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:border-primary hover:bg-primary hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                  >
+                    <svg
+                      width="16"
+                      height="12"
+                      viewBox="0 0 16 12"
+                      class="fill-current"
+                    >
+                      <path
+                        d="M15.6645 1.88018C15.4839 1.13364 14.9419 0.552995 14.2452 0.359447C13.0065 6.59222e-08 8 0 8 0C8 0 2.99355 6.59222e-08 1.75484 0.359447C1.05806 0.552995 0.516129 1.13364 0.335484 1.88018C0 3.23502 0 6 0 6C0 6 0 8.79263 0.335484 10.1198C0.516129 10.8664 1.05806 11.447 1.75484 11.6406C2.99355 12 8 12 8 12C8 12 13.0065 12 14.2452 11.6406C14.9419 11.447 15.4839 10.8664 15.6645 10.1198C16 8.79263 16 6 16 6C16 6 16 3.23502 15.6645 1.88018ZM6.4 8.57143V3.42857L10.5548 6L6.4 8.57143Z"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    href="javascript:void(0)"
+                    class="mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:border-primary hover:bg-primary hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                  >
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      class="fill-current"
+                    >
+                      <path
+                        d="M13.0214 0H1.02084C0.453707 0 0 0.451613 0 1.01613V12.9839C0 13.5258 0.453707 14 1.02084 14H12.976C13.5432 14 13.9969 13.5484 13.9969 12.9839V0.993548C14.0422 0.451613 13.5885 0 13.0214 0ZM4.15142 11.9H2.08705V5.23871H4.15142V11.9ZM3.10789 4.3129C2.42733 4.3129 1.90557 3.77097 1.90557 3.11613C1.90557 2.46129 2.45002 1.91935 3.10789 1.91935C3.76577 1.91935 4.31022 2.46129 4.31022 3.11613C4.31022 3.77097 3.81114 4.3129 3.10789 4.3129ZM11.9779 11.9H9.9135V8.67097C9.9135 7.90323 9.89082 6.8871 8.82461 6.8871C7.73571 6.8871 7.57691 7.74516 7.57691 8.60323V11.9H5.51254V5.23871H7.53154V6.16452H7.55423C7.84914 5.62258 8.50701 5.08065 9.52785 5.08065C11.6376 5.08065 12.0232 6.43548 12.0232 8.2871V11.9H11.9779Z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+                <p class="text-base text-body-color">&copy; 2025 TailGrids</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div>
+          <span class="absolute left-0 bottom-0 z-[-1]">
+            <svg
+              width="217"
+              height="229"
+              viewBox="0 0 217 229"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M-64 140.5C-64 62.904 -1.096 1.90666e-05 76.5 1.22829e-05C154.096 5.49924e-06 217 62.904 217 140.5C217 218.096 154.096 281 76.5 281C-1.09598 281 -64 218.096 -64 140.5Z"
+                fill="url(#paint0_linear_1179_5)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_1179_5"
+                  x1="76.5"
+                  y1="281"
+                  x2="76.5"
+                  y2="1.22829e-05"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#3056D3" stop-opacity="0.08" />
+                  <stop offset="1" stop-color="#C4C4C4" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="absolute top-10 right-10 z-[-1]">
+            <svg
+              width="75"
+              height="75"
+              viewBox="0 0 75 75"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M37.5 -1.63918e-06C58.2107 -2.54447e-06 75 16.7893 75 37.5C75 58.2107 58.2107 75 37.5 75C16.7893 75 -7.33885e-07 58.2107 -1.63918e-06 37.5C-2.54447e-06 16.7893 16.7893 -7.33885e-07 37.5 -1.63918e-06Z"
+                fill="url(#paint0_linear_1179_4)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_1179_4"
+                  x1="-1.63917e-06"
+                  y1="37.5"
+                  x2="75"
+                  y2="37.5"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#13C296" stop-opacity="0.31" />
+                  <stop offset="1" stop-color="#C4C4C4" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+        </div>
+      </footer>
+      <!-- ====== Footer Section End -->
 {% endblock %}

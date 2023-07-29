@@ -3,10 +3,10 @@ from flask import Flask, render_template, request, url_for, flash, redirect
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '85d597d573ec0aff9812da3f5386a743ac0d85fb03e59896'
 
-messages = [{'title': 'Message One',
-             'content': 'Message One Content'},
-            {'title': 'Message Two',
-             'content': 'Message Two Content'}
+messages = [{'title': 'Python3',
+             'content': 'Very straight-to-point article. Really worth time reading. Thank you! But tools are just the instruments for the UX designers. The knowledge of the design tools are as important as the creation of the design strategy.'},
+            {'title': 'Understanding Javascript',
+             'content': 'The article covers the essentials, challenges, myths and stages the UX designer should consider while creating the design strategy.'}
             ]
 
 @app.route('/')

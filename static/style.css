@@ -4,3 +4,8 @@
     color: #970020;
     background-color: #ffd5de;
 }
+
+.footer{
+    position: absolute;
+    bottom: 0!important;
+}
